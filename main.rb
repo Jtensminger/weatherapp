@@ -15,8 +15,18 @@ require 'colorize'
 # data = HTTParty.get("http://api.wunderground.com/api/#{api_key}/conditions/q/37814.json")
 # puts data.display_location.city
 
-client = Client.new
+client = Client.new(37814)
 
 client.hurricanes.each do |hurricane|
   puts "Current huricanes include #{hurricane.name.red}"
 end
+client.alerts.each do |alert|
+  puts "Current alerts include #{alert.message.red}"
+end
+
+client.forecast.each do |day,conditions|
+  puts "#{day.light_blue}: #{conditions.light_green}" + "\n"
+end
+
+puts client.sun
+puts client.conditions
