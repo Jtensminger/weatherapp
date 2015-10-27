@@ -1,4 +1,4 @@
-require 'json'
+require 'colorize'
 require 'httparty'
 class Sun
   def initialize user_zipcode
@@ -13,6 +13,6 @@ class Sun
     sunrise_min = data['sun_phase']['sunrise']['minute']
     sunset_hour = data['sun_phase']['sunset']['hour']
     sunset_min = data['sun_phase']['sunset']['minute']
-    "Sunrise for today: #{sunrise_hour}:#{sunrise_min}AM. The sunset is at #{sunset_hour}:#{sunset_min}PM."
+    "Sunrise for today: #{sunrise_hour.yellow}:#{sunrise_min.yellow}AM. The sunset is at #{sunset_hour.yellow}:#{sunset_min.yellow}PM."
   end
 end

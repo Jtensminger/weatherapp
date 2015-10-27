@@ -8,6 +8,6 @@ class Hurricane
   def get_hurricanes
     data = HTTParty.get(@url)
     currenthurricane_name = data['currenthurricane'][0]['stormInfo']['stormName_Nice']
-    "Current huricanes include #{currenthurricane_name}"
+    "Current huricanes include #{currenthurricane_name.red}"
   end
 end

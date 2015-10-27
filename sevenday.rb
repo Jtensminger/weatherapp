@@ -1,4 +1,5 @@
 require 'httparty'
+require 'colorize'
 class SevenDayForecast
   def initialize zipcode
     @user_zipcode = zipcode
@@ -11,7 +12,7 @@ class SevenDayForecast
     10.times do |i|
       day = data['forecast']['txt_forecast']['forecastday'][i]['title']
       conditions = data['forecast']['txt_forecast']['forecastday'][i]['fcttext']
-      puts "Conditions for #{day}: #{conditions}."
+      puts "Conditions".magenta + " for #{day.cyan}: #{conditions.light_green}."
     end
     return nil
   end

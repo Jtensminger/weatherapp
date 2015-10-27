@@ -2,7 +2,7 @@ require './sun'
 require './hurricane'
 require './sevenday'
 require './alerts'
-
+require 'colorize'
 puts "Please enter 5 digit zipcode to receive local weather report and storm warnings."
 zipcode = gets.chomp.to_i
 times = Sun.new(zipcode)
