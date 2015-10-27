@@ -2,9 +2,12 @@ require 'httparty'
 require 'json'
 require 'pry'
 require './sun'
-
+require './hurricane'
 times = Sun.new(37814)
+hurricanes = Hurricane.new
+
 puts times.get_times
+puts hurricanes.get_hurricanes
 # puts "Please enter zip code."
 # user_zipcode = gets.chomp.to_i
 # puts ""

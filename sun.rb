@@ -1,4 +1,5 @@
 require 'json'
+require 'httparty'
 class Sun
   def initialize user_zipcode
     @api_key = 'c44c46161f9c4f8a'
